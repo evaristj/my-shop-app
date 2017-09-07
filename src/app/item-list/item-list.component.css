@@ -7,4 +7,11 @@ p {
     background-color: #AAC1FC;
     width: 15%;
 }
-
+.items{
+    width: 25%;
+    background-color: #04FF00;
+}
+.main {
+    background-color: whitesmoke;
+    border:none;
+}
