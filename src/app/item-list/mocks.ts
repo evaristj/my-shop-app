@@ -5,19 +5,25 @@ export const ITEMS: Item[] = [{
     'name': 'Item name',
     'description': 'these item is the best',
     'stock': 5,
-    'price': 15.45
+    'price': 15.45,
+    'imagen': '../assets/nature-q-c-640-480-2.jpg',
+    'isSelected': true
   },
   {
     'id': 2,
     'name': 'Another item name',
     'description': 'these item is the best second',
     'stock': 8,
-    'price': 12.99
+    'price': 12.99,
+    'imagen': '../assets/nature-q-c-640-480-3.jpg',
+    'isSelected': false
   },
   {
     'id': 3,
     'name': 'Another item name more',
     'description': 'these item is the best therd',
     'stock': 0,
-    'price': 9.99
+    'price': 9.99,
+    'imagen': '../assets/nature-q-c-640-480-8.jpg',
+    'isSelected': false
   }];

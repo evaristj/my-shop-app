@@ -4,4 +4,6 @@ export class Item {
     description: string;
     stock: number;
     price: number;
+    imagen: string;
+    isSelected: boolean;
 }

@@ -12,14 +12,20 @@
     </li>
   </ul>
   <h1 class="items">Total items in stock: {{totalItems()}} </h1>
-  <div class="items2" style="text-align:left">
+  <div style="text-align:left">
     <ul>
-      <li *ngFor="let item of myItems">
-        <h2>{{item.name | uppercase}}</h2>
-        <p>{{item.description}}</p>
-        <p *ngIf="item.stock > 0">{{item.stock}} in Stock</p>
-        <p *ngIf="item.stock === 0">Out of Stock</p>
-        <p>{{item.price | currency:'EUR':true}}</p>
+      <div class="contenido"></div>
+      <li class="itemlist" *ngFor="let item of myItems" >
+        <!-- inicio variable isSelected -->
+        <div [class.flex]="item.isSelected">
+        <!-- fin variable isSelected -->
+          <h2>{{item.name | uppercase}}</h2>
+          <img [src] = "item.imagen" alt="{{item.imagen}}"/>
+          <p>{{item.description}}</p>
+          <p *ngIf="item.stock > 0">{{item.stock}} in Stock</p>
+          <p *ngIf="item.stock === 0">Out of Stock</p>
+          <p>{{item.price | currency:'EUR':true}}</p>
+      </div>
       </li>
     </ul>
   </div>
