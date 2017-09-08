@@ -7,7 +7,8 @@ export const ITEMS: Item[] = [{
     'stock': 5,
     'price': 15.45,
     'imagen': '../assets/nature-q-c-640-480-2.jpg',
-    'isSelected': true
+    'isSelected': true,
+    'quantity': 0
   },
   {
     'id': 2,
@@ -16,7 +17,8 @@ export const ITEMS: Item[] = [{
     'stock': 8,
     'price': 12.99,
     'imagen': '../assets/nature-q-c-640-480-3.jpg',
-    'isSelected': false
+    'isSelected': false,
+    'quantity': 0
   },
   {
     'id': 3,
@@ -25,5 +27,6 @@ export const ITEMS: Item[] = [{
     'stock': 0,
     'price': 9.99,
     'imagen': '../assets/nature-q-c-640-480-8.jpg',
-    'isSelected': false
+    'isSelected': false,
+    'quantity': 0
   }];

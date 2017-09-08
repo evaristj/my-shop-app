@@ -40,5 +40,25 @@ export class ItemListComponent implements OnInit {
     });
     return total;
   }
+  upQuantity(item: Item) {
+    if (item.stock > 0) {
+      item.quantity++;
+      item.stock--;
+    }else {
+      console.log();
+    }
+  }
+  downQuantity(item: Item) {
+    if (item.quantity > 0) {
+      item.quantity--;
+      item.stock++;
+    }
+  }
+  showKey(event) {
+    alert(event.keyCode);
+  }
+  getCoord(event) {
+    console.log(event.clientX + ', ' + event.clientY);
+  }
 
 }

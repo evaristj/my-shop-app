@@ -5,7 +5,7 @@ p {
     width: 90%;
 }
 .items{
-    width: 25%;
+    width: 40%;
     background-color: #04FF00;
 }
 .main {
@@ -26,5 +26,14 @@ img{
 }
 .flex{
     border: 5px solid #9B0075;
-    background-color: whitesmoke;
+    background-color: #ACC9E0;
 }
+/*propiedad css para quitar las flechas dentro del input de incrementar y decrementar*/
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button{
+    -webkit-appearance: none; 
+}
+.input-browser{
+    margin: 10px 10px 10px 80px;
+}
+

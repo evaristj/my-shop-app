@@ -1,30 +1,27 @@
 <div class="main">
-  <h2>Here are some links to help you start {{link}}: </h2>
-  <ul>
-    <li>
-      <h2><a target="_blank" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-    </li>
-    <li>
-      <h2><a target="_blank" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-    </li>
-    <li>
-      <h2><a target="_blank" href="https://blog.angular.io//">Angular blog</a></h2>
-    </li>
-  </ul>
   <h1 class="items">Total items in stock: {{totalItems()}} </h1>
+ <!--   <div class="input-browser">
+    <input type="search" maxlength=26 placeholder = "Filtrar items por nombre..." [(ngModel)]="name">
+  </div>
+  <div class="resultado" *ngFor="let item of myItems | search:'name':name">
+    {{item.imagen}}
+  </div>-->
   <div style="text-align:left">
     <ul>
       <div class="contenido"></div>
-      <li class="itemlist" *ngFor="let item of myItems" >
-        <!-- inicio variable isSelected -->
-        <div [class.flex]="item.isSelected">
-        <!-- fin variable isSelected -->
+      <li class="itemlist" *ngFor="let item of myItems" [class.flex]="item.isSelected">
           <h2>{{item.name | uppercase}}</h2>
           <img [src] = "item.imagen" alt="{{item.imagen}}"/>
           <p>{{item.description}}</p>
-          <p *ngIf="item.stock > 0">{{item.stock}} in Stock</p>
+          <p *ngIf="item.stock >= 0">{{item.stock}} in Stock</p>
+          <div class="panel-amount">
+            <button class="btn-remove" [disabled]='item.quantity==0' (click)="downQuantity(item)">-</button>
+            <input type="number" maxlength="2" placeholder="0" class="amount" [value]="item.quantity"/>
+            <button class="btn-amount" [disabled]='item.stock==0' (click)="upQuantity(item)">+</button>
           <p *ngIf="item.stock === 0">Out of Stock</p>
           <p>{{item.price | currency:'EUR':true}}</p>
+          <input type="text" (keydown)="showKey($event)">
+          <h2 (mouseover)="getCoord($event)">Hover me</h2>
       </div>
       </li>
     </ul>
