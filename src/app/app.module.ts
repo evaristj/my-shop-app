@@ -5,6 +5,8 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { ItemListComponent } from './item-list/item-list.component';
 
+import { Ng2FilterPipeModule } from 'ng2-filter-pipe';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -12,7 +14,8 @@ import { ItemListComponent } from './item-list/item-list.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    Ng2FilterPipeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

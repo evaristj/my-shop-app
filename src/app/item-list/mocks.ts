@@ -2,7 +2,7 @@ import { Item } from './item-models';
 
 export const ITEMS: Item[] = [{
     'id': 1,
-    'name': 'Item name',
+    'name': 'Beach',
     'description': 'these item is the best',
     'stock': 5,
     'price': 15.45,
@@ -12,7 +12,7 @@ export const ITEMS: Item[] = [{
   },
   {
     'id': 2,
-    'name': 'Another item name',
+    'name': 'Mountain and beach',
     'description': 'these item is the best second',
     'stock': 8,
     'price': 12.99,
@@ -22,7 +22,7 @@ export const ITEMS: Item[] = [{
   },
   {
     'id': 3,
-    'name': 'Another item more',
+    'name': 'Sun and beach',
     'description': 'these item is the best therd',
     'stock': 0,
     'price': 9.99,

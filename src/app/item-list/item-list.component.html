@@ -1,11 +1,12 @@
 <div class="main">
   <h1 class="items">Total items in stock: {{totalItems()}} </h1>
- <!--   <div class="input-browser">
-    <input type="search" maxlength=26 placeholder = "Filtrar items por nombre..." [(ngModel)]="name">
+  <div class="input-browser">
+    <input type="search" maxlength=26 placeholder = "Filtrar items por nombre..." [(ngModel)]="itemFilter.name">
+    <ul>
+      <li class="resultado" *ngFor="let item of items | filterBy: itemFilter">{{item.name}}</li>
+      <li *ngIf = "(items | filterBy: itemFilter).length === 0">No matching elements</li>
+    </ul>
   </div>
-  <div class="resultado" *ngFor="let item of myItems | search:'name':name">
-    {{item.imagen}}
-  </div>-->
   <div style="text-align:left">
     <ul>
       <div class="contenido"></div>

@@ -12,6 +12,8 @@ export class ItemListComponent implements OnInit {
   myItems: Item[];
   fin = 'Give Feedback';
   link = 'pincha estos links, amigo';
+  items: any[] = [{ name: 'Beach' }, { name: 'Mountain and beach' }, { name: 'Sun and beach' }, { name: 'Island beach' }];
+  itemFilter: any = { name: '' };
 
   constructor() { }
 
