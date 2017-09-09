@@ -22,7 +22,7 @@ export const ITEMS: Item[] = [{
   },
   {
     'id': 3,
-    'name': 'Another item name more',
+    'name': 'Another item more',
     'description': 'these item is the best therd',
     'stock': 0,
     'price': 9.99,
