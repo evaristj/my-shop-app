@@ -3,8 +3,8 @@
   <div class="input-browser">
     <input type="search" maxlength=26 placeholder = "Filtrar items por nombre..." [(ngModel)]="itemFilter.name">
     <ul>
-      <li class="resultado" *ngFor="let item of items | filterBy: itemFilter">{{item.name}}</li>
-      <li *ngIf = "(items | filterBy: itemFilter).length === 0">No matching elements</li>
+      <li class="resultado" *ngFor="let item of myItems | filterBy: itemFilter">{{item.name}}, {{item.price | currency:'EUR':true}}</li>
+      <li *ngIf = "(myItems | filterBy: itemFilter).length === 0">No matching elements</li>
     </ul>
   </div>
   <div style="text-align:left">
