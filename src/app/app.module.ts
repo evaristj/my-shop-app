@@ -6,18 +6,17 @@ import { AppComponent } from './app.component';
 import { ItemListComponent } from './item-list/item-list.component';
 
 import { Ng2FilterPipeModule } from 'ng2-filter-pipe';
+import { MySearchPipe } from './my-search.pipe';
+import { ItemListService } from './item-list/item-list.service';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    ItemListComponent
+    AppComponent, ItemListComponent, MySearchPipe
   ],
   imports: [
-    BrowserModule,
-    FormsModule,
-    Ng2FilterPipeModule
+    BrowserModule, FormsModule, Ng2FilterPipeModule, HttpModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [ItemListService], bootstrap: [AppComponent]
 })
 export class AppModule { }

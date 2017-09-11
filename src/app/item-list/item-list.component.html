@@ -1,15 +1,30 @@
 <div class="main">
   <h1 class="items">Total items in stock: {{totalItems()}} </h1>
+  <!-- inicio busqueda -->
   <div class="input-browser">
     <input type="search" maxlength=26 placeholder = "Filtrar items por nombre..." [(ngModel)]="itemFilter.name">
     <ul>
-      <li class="resultado" *ngFor="let item of myItems | filterBy: itemFilter">{{item.name}}, {{item.price | currency:'EUR':true}}</li>
+      <li class="itemlist" *ngFor="let item of myItems | filterBy: itemFilter">
+          <h2>{{item.name | uppercase}}</h2>
+          <img [src] = "item.imagen" alt="{{item.imagen}}"/>
+          <p>{{item.description}}</p>
+          <p *ngIf="item.stock >= 0">{{item.stock}} in Stock</p>
+          <div class="panel-amount">
+            <button class="btn-remove" [disabled]='item.quantity==0' (click)="downQuantity(item)">-</button>
+            <input type="number" maxlength="2" placeholder="0" class="amount" [value]="item.quantity"/>
+            <button class="btn-amount" [disabled]='item.stock==0' (click)="upQuantity(item)">+</button>
+            <p *ngIf="item.stock === 0">Out of Stock</p>
+            <p>{{item.price | currency:'EUR':true}}</p>
+            <input type="text" (keydown)="showKey($event)">
+            <h2 (mouseover)="getCoord($event)">Hover me</h2>
+          </div>
+      </li>
       <li *ngIf = "(myItems | filterBy: itemFilter).length === 0">No matching elements</li>
     </ul>
   </div>
+  <!-- fin busqueda -->
   <div style="text-align:left">
     <ul>
-      <div class="contenido"></div>
       <li class="itemlist" *ngFor="let item of myItems" [class.flex]="item.isSelected">
           <h2>{{item.name | uppercase}}</h2>
           <img [src] = "item.imagen" alt="{{item.imagen}}"/>
@@ -19,14 +34,36 @@
             <button class="btn-remove" [disabled]='item.quantity==0' (click)="downQuantity(item)">-</button>
             <input type="number" maxlength="2" placeholder="0" class="amount" [value]="item.quantity"/>
             <button class="btn-amount" [disabled]='item.stock==0' (click)="upQuantity(item)">+</button>
+            <p *ngIf="item.stock === 0">Out of Stock</p>
+            <p>{{item.price | currency:'EUR':true}}</p>
+            <input type="text" (keydown)="showKey($event)">
+            <h2 (mouseover)="getCoord($event)">Hover me</h2>
+          </div>
+      </li>
+    </ul>
+  </div>
+  <!-- inicio busqueda por if con pipe propia -->
+  <div class="busqueda-custom">
+    <input type="search" [(ngModel)]= "mySearch" maxlength=26 placeholder = "Filtrar items por nombre...">
+    <ul>
+      <li class="itemlist" *ngFor="let item of myItems | mySearch:'name': mySearch">
+        <h2>{{item.name | uppercase}}</h2>
+        <img [src] = "item.imagen" alt="{{item.imagen}}"/>
+        <p>{{item.description}}</p>
+        <p *ngIf="item.stock >= 0">{{item.stock}} in Stock</p>
+        <div class="panel-amount">
+          <button class="btn-remove" [disabled]='item.quantity==0' (click)="downQuantity(item)">-</button>
+          <input type="number" maxlength="2" placeholder="0" class="amount" [value]="item.quantity"/>
+          <button class="btn-amount" [disabled]='item.stock==0' (click)="upQuantity(item)">+</button>
           <p *ngIf="item.stock === 0">Out of Stock</p>
           <p>{{item.price | currency:'EUR':true}}</p>
           <input type="text" (keydown)="showKey($event)">
           <h2 (mouseover)="getCoord($event)">Hover me</h2>
-      </div>
+        </div>
       </li>
     </ul>
+    <li *ngIf = "(myItems | mySearch: filter).length === 0">No matching elements</li>
   </div>
-
+  <!-- fin busqueda por if con pipe propia -->
   <h1>{{fin}}</h1>
 </div>
