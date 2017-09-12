@@ -9,10 +9,11 @@ import { Ng2FilterPipeModule } from 'ng2-filter-pipe';
 import { MySearchPipe } from './my-search.pipe';
 import { ItemListService } from './item-list/item-list.service';
 import { HttpModule } from '@angular/http';
+import { OrderComponentComponent } from './order-component/order-component.component';
 
 @NgModule({
   declarations: [
-    AppComponent, ItemListComponent, MySearchPipe
+    AppComponent, ItemListComponent, MySearchPipe, OrderComponentComponent
   ],
   imports: [
     BrowserModule, FormsModule, Ng2FilterPipeModule, HttpModule
