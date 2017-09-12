@@ -20,12 +20,12 @@ export class ItemListComponent implements OnInit {
     this.itemListService.getItemList().subscribe(myItems => this.myItems = myItems);
   }
   totalItems() {
-     let total = 0;
-     this.myItems.forEach(item => {
-      total += item.stock;
-     });
-     return total;
-   // return this.myItems ? this.myItems.length : 0;
+  //   let total = 0;
+  //   this.myItems.forEach(item => {
+  //    total += item.stock;
+  //   });
+  //   return total;
+   return this.myItems ? this.myItems.reduce((prev, current) => prev + current.stock, 0) : 0;
   }
   upQuantity(item: Item) {
     if (item.stock > 0) {
