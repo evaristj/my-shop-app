@@ -1,4 +1,5 @@
 <div class="main">
+  <br><input type="text" (keydown)="showKey($event)">    
   <h1 class="items">Total items in stock: {{totalItems()}} </h1>
   <!-- inicio busqueda -->
   <div class="input-browser">
@@ -15,8 +16,6 @@
             <button class="btn-amount" [disabled]='item.stock==0' (click)="upQuantity(item)">+</button>
             <p *ngIf="item.stock === 0">Out of Stock</p>
             <p>{{item.price | currency:'EUR':true}}</p>
-            <input type="text" (keydown)="showKey($event)">
-            <h2 (mouseover)="getCoord($event)">Hover me</h2>
           </div>
       </li>
      <!-- <li *ngIf = "(myItems | filterBy: itemFilter).length === 0">No matching elements</li>  --> 

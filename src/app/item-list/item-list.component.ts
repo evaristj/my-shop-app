@@ -44,8 +44,5 @@ export class ItemListComponent implements OnInit {
   showKey(event) {
     alert(event.keyCode);
   }
-  getCoord(event) {
-    console.log(event.clientX + ', ' + event.clientY);
-  }
 
 }
