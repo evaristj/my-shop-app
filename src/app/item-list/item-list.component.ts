@@ -9,7 +9,6 @@ import { ItemListService } from './item-list.service';
 })
 export class ItemListComponent implements OnInit {
   myItems: Item[];
-  fin = 'Give Feedback';
   itemFilter: any = {};
 
   constructor(private itemListService: ItemListService) { }
@@ -18,11 +17,6 @@ export class ItemListComponent implements OnInit {
     this.itemListService.getItemList().subscribe(myItems => this.myItems = myItems);
   }
   totalItems() {
-  //   let total = 0;
-  //   this.myItems.forEach(item => {
-  //    total += item.stock;
-  //   });
-  //   return total;
    return this.myItems ? this.myItems.reduce((prev, current) => prev + current.stock, 0) : 0;
   }
   upQuantity(item: Item) {
