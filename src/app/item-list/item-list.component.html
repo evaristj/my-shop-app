@@ -7,6 +7,7 @@
     <ul>
       <li class="itemlist" *ngFor="let item of myItems | filterBy: itemFilter">
           <h2>{{item.name | uppercase}}</h2>
+          <input type="text" [(ngModel)]="item.name" (blur)="updateItem(item)" >
           <img [src] = "item.imagen" alt="{{item.imagen}}"/>
           <p>{{item.description}}</p>
           <p *ngIf="item.stock >= 0">{{item.stock}} in Stock</p>

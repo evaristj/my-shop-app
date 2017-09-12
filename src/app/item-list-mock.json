@@ -2,7 +2,7 @@
   "item-list": [
     {
       "id": 1,
-      "name": "Beach",
+      "name": "arena",
       "description": "these item is the best",
       "stock": 5,
       "price": 15.45,
@@ -12,7 +12,7 @@
     },
     {
       "id": 2,
-      "name": "Mountain and beach",
+      "name": "playta",
       "description": "these item is the best second",
       "stock": 8,
       "price": 12.99,
@@ -57,6 +57,26 @@
       "stock": 7,
       "price": 15.45,
       "imagen": "../assets/nature-q-c-640-480-2.jpg",
+      "isSelected": true,
+      "quantity": 0
+    },
+    {
+      "id": 7,
+      "name": "Lake",
+      "description": "these item is the best",
+      "stock": 7,
+      "price": 15.45,
+      "imagen": "../assets/nature-q-c-640-480-10.jpg",
+      "isSelected": true,
+      "quantity": 0
+    },
+    {
+      "id": 8,
+      "name": "Lake",
+      "description": "these item is the best",
+      "stock": 7,
+      "price": 15.45,
+      "imagen": "../assets/nature-q-c-640-480-10.jpg",
       "isSelected": true,
       "quantity": 0
     }

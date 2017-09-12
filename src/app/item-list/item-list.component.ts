@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Item } from './item-models';
 import { ItemListService } from './item-list.service';
 
-
 @Component({
   selector: 'app-item-list',
   templateUrl: './item-list.component.html',
@@ -11,7 +10,6 @@ import { ItemListService } from './item-list.service';
 export class ItemListComponent implements OnInit {
   myItems: Item[];
   fin = 'Give Feedback';
-  link = 'pincha estos links, amigo';
   itemFilter: any = {};
 
   constructor(private itemListService: ItemListService) { }
@@ -43,6 +41,10 @@ export class ItemListComponent implements OnInit {
   }
   showKey(event) {
     alert(event.keyCode);
+  }
+  // actualizar items
+  updateItem(item: Item) {
+    this.itemListService.updateItem(item).subscribe();
   }
 
 }
