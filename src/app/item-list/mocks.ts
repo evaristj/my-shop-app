@@ -7,7 +7,7 @@ export const ITEMS: Item[] = [{
     'stock': 5,
     'price': 15.45,
     'imagen': '../assets/nature-q-c-640-480-2.jpg',
-    'isSelected': true,
+    'isSelected': false,
     'quantity': 0
   },
   {

@@ -6,8 +6,12 @@
     <input type="search" maxlength=26 placeholder = "Filtrar items por nombre..." [(ngModel)]="itemFilter.name">
     <ul>
       <li class="itemlist" *ngFor="let item of myItems | filterBy: itemFilter">
-          <h2>{{item.name | uppercase}}</h2>
-          <input type="text" [(ngModel)]="item.name" (blur)="updateItem(item)" >
+          <!-- updateItem -->
+          <h2 *ngIf="!item.isSelected" (click)="editable(item)">{{item.name | uppercase}}</h2>
+          <h2 *ngIf="item.isSelected">
+            <input type="text" [(ngModel)]="item.name" (blur)="updateItem(item)" >
+          </h2>
+          <!-- updateItem -->
           <img [src] = "item.imagen" alt="{{item.imagen}}"/>
           <p>{{item.description}}</p>
           <p *ngIf="item.stock >= 0">{{item.stock}} in Stock</p>

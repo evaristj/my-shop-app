@@ -38,7 +38,11 @@ export class ItemListComponent implements OnInit {
   }
   // actualizar items
   updateItem(item: Item) {
+    item.isSelected = false;
     this.itemListService.updateItem(item).subscribe();
+  }
+  editable(item: Item) {
+    item.isSelected = true;
   }
 
 }
