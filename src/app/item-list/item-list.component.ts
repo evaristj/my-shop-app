@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Item } from './item-models';
 import { ItemListService } from './item-list.service';
+import { CartService } from "../cart/cart.service";
 
 @Component({
   selector: 'app-item-list',
@@ -11,7 +12,7 @@ export class ItemListComponent implements OnInit {
   myItems: Item[];
   itemFilter: any = {};
 
-  constructor(private itemListService: ItemListService) { }
+  constructor(private itemListService: ItemListService, private cartService: CartService) { }
 
   ngOnInit() {
     this.itemListService.getItemList().subscribe(myItems => this.myItems = myItems);
@@ -43,6 +44,11 @@ export class ItemListComponent implements OnInit {
   }
   editable(item: Item) {
     item.isSelected = true;
+  }
+
+  addToCart(item: Item) {
+    this.cartService.cart.myItems.push(item);
+    console.log(this.cartService.cart);
   }
 
 }

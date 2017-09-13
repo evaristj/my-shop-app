@@ -9,4 +9,3 @@ export class AppComponent {
   title = 'My new App';
   title2 = 'hola amigo';
 }
-

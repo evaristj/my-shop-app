@@ -1,3 +1,10 @@
+<!-- <p>{{totalItems()}}</p>
+<p>Car Items {{getCartItems()}} <a routerLink="/order" routerLinkActive="active">Order</a></p> -->
+<nav>
+    <a routerLink="/cart-component" routerLinkActive="active">Cart</a>
+    <a routerLink="/order-component" routerLinkActive="active">Order</a>
+  </nav>
+  <router-outlet></router-outlet>
 <div class="main">
   <br><input type="text" (keydown)="showKey($event)">    
   <h1 class="items">Total items in stock: {{totalItems()}} </h1>
@@ -15,12 +22,14 @@
           <img [src] = "item.imagen" alt="{{item.imagen}}"/>
           <p>{{item.description}}</p>
           <p *ngIf="item.stock >= 0">{{item.stock}} in Stock</p>
+          <p *ngIf="item.stock === 0">Out of Stock</p>
           <div class="panel-amount">
             <button class="btn-remove" [disabled]='item.quantity==0' (click)="downQuantity(item)">-</button>
             <input type="number" maxlength="2" placeholder="0" class="amount" [value]="item.quantity"/>
             <button class="btn-amount" [disabled]='item.stock==0' (click)="upQuantity(item)">+</button>
-            <p *ngIf="item.stock === 0">Out of Stock</p>
             <p>{{item.price | currency:'EUR':true}}</p>
+            <br>
+            <button (click)="addToCart(item)">Add to Cart</button>
           </div>
       </li>
      <!-- <li *ngIf = "(myItems | filterBy: itemFilter).length === 0">No matching elements</li>  --> 
