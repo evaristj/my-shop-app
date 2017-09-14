@@ -1,3 +1,26 @@
-<p>
-  cart works!
-</p>
+<nav>
+  <a routerLink="/item-list" routerLinkActive="active">Listado</a>
+  <a routerLink="/order-component" routerLinkActive="active">Order</a>
+</nav>
+<h1>Listado de tus articulos</h1>
+<ul>
+  <li class="itemlist" *ngFor="let item of myItems | filterBy: itemFilter">
+      <!-- updateItem -->
+      <h2 *ngIf="!item.isSelected" (click)="editable(item)">{{item.name | uppercase}}</h2>
+      <h2 *ngIf="item.isSelected">
+        <input type="text" [(ngModel)]="item.name" (blur)="updateItem(item)" >
+      </h2>
+      <!-- updateItem -->
+      <img [src] = "item.imagen" alt="{{item.imagen}}"/>
+      <p>{{item.description}}</p>
+      <p *ngIf="item.stock >= 0">{{item.stock}} in Stock</p>
+      <p *ngIf="item.stock === 0">Out of Stock</p>
+      <div class="panel-amount">
+        <button class="btn-remove" [disabled]='item.quantity==0' (click)="downQuantity(item)">-</button>
+        <input type="number" maxlength="2" placeholder="0" class="amount" [value]="item.quantity"/>
+        <button class="btn-amount" [disabled]='item.stock==0' (click)="upQuantity(item)">+</button>
+        <p>{{item.price | currency:'EUR':true}}</p>
+        <br>
+      </div>
+  </li>
+</ul>

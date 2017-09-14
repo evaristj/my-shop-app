@@ -37,3 +37,6 @@ input::-webkit-outer-spin-button{
     margin: 10px 10px 10px 80px;
 }
 
+.select:hover{
+    background-color: blue;
+}

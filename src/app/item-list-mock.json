@@ -4,15 +4,15 @@
       "id": 1,
       "name": "River",
       "description": "these item is the best",
-      "stock": 5,
+      "stock": 0,
       "price": 15.45,
       "imagen": "../assets/nature-q-c-640-480-2.jpg",
       "isSelected": false,
-      "quantity": 0
+      "quantity": 5
     },
     {
       "id": 2,
-      "name": "montaña",
+      "name": "mountain",
       "description": "these item is the best second",
       "stock": 8,
       "price": 12.99,
@@ -22,7 +22,7 @@
     },
     {
       "id": 3,
-      "name": "Sun and beach",
+      "name": "bosque",
       "description": "these item is the best therd",
       "stock": 0,
       "price": 9.99,

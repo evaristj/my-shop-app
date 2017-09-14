@@ -1,9 +1,9 @@
 <!-- <p>{{totalItems()}}</p>
 <p>Car Items {{getCartItems()}} <a routerLink="/order" routerLinkActive="active">Order</a></p> -->
 <nav>
-    <a routerLink="/cart-component" routerLinkActive="active">Cart</a>
-    <a routerLink="/order-component" routerLinkActive="active">Order</a>
-  </nav>
+  <a routerLink="/cart-component" routerLinkActive="active">Cart</a>
+  <a routerLink="/order-component" routerLinkActive="active">Order</a>
+</nav>
   <router-outlet></router-outlet>
 <div class="main">
   <br><input type="text" (keydown)="showKey($event)">    
@@ -12,7 +12,7 @@
   <div class="input-browser">
     <input type="search" maxlength=26 placeholder = "Filtrar items por nombre..." [(ngModel)]="itemFilter.name">
     <ul>
-      <li class="itemlist" *ngFor="let item of myItems | filterBy: itemFilter">
+      <li class="itemlist" *ngFor="let item of myItems | filterBy: itemFilter" [class.select]="item.isSelected">
           <!-- updateItem -->
           <h2 *ngIf="!item.isSelected" (click)="editable(item)">{{item.name | uppercase}}</h2>
           <h2 *ngIf="item.isSelected">
